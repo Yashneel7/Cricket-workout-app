@@ -93,11 +93,11 @@ class VideoScreen(Screen):
         day=app.selected_day
         self.current_video=app.days_dictionary[day]
         self.video_num=0
+        self.video.show()
         self.video.load_url(self.current_video[self.video_num])
 
     def go_back(self, instance):
-        self.video.pause()
-        self.video.close()
+        self.video.hide()
         self._is_playing = False    
         self.manager.current = "day_select"
         Clock.schedule_once(

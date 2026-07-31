@@ -182,3 +182,14 @@ class AndroidVideoWebView(Widget):
         finally:
             self._webview = None
             self._webview_ready = False
+    @run_on_ui_thread
+    def hide(self):
+        if self._webview and self._webview_ready:
+            elf._webview.setVisibility(4)   # 4 = View.INVISIBLE
+            self.pause()
+
+    @run_on_ui_thread
+    def show(self):
+        if self._webview and self._webview_ready:
+            self._webview.setVisibility(0)   # 0 = View.VISIBLE
+            self._update_webview_bounds()
