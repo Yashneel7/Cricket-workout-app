@@ -52,7 +52,7 @@ class AndroidVideoWebView(Widget):
             LayoutParams = autoclass("android.view.ViewGroup$LayoutParams")
             View = autoclass("android.view.View")
             PythonActivity = autoclass("org.kivy.android.PythonActivity")
-
+            
             activity = PythonActivity.mActivity
             self._webview = WebView(activity)
             self._webview.getSettings().setJavaScriptEnabled(True)
@@ -148,16 +148,15 @@ class AndroidVideoWebView(Widget):
 
     @run_on_ui_thread
     def close(self):
-        """Hide + remove + destroy the native WebView so it cannot leave
-        a white overlay on top of the Kivy UI."""
+        
         if not self._webview:
             return
         try:
             self._webview_ready = False
-            View = autoclass("android.view.View")
+            
 
             
-            self._webview.setVisibility(View.GONE)
+            self._webview.setVisibility(self.View.GONE)
 
            
             self._webview.stopLoading()
@@ -184,12 +183,26 @@ class AndroidVideoWebView(Widget):
             self._webview_ready = False
     @run_on_ui_thread
     def hide(self):
-        if self._webview and self._webview_ready:
-            elf._webview.setVisibility(4)   # 4 = View.INVISIBLE
-            self.pause()
+        if not self._webview:
+            return
+        try:
+            
+            self._webview.setVisibility(8)                             # if you have a pause helper
+            
+            params = self._webview.getLayoutParams()
+            if params:
+                params.width = 0
+                params.height = 0
+                self._webview.setLayoutParams(params)
+        except Exception as e:
+            print("hide failed:", e)
 
     @run_on_ui_thread
     def show(self):
-        if self._webview and self._webview_ready:
-            self._webview.setVisibility(0)   # 0 = View.VISIBLE
-            self._update_webview_bounds()
+        if not self._webview:
+            return
+        try:
+            self._webview.setVisibility(0)          
+            self._update_webview_bounds()           
+        except Exception as e:
+            print("show failed:", e)

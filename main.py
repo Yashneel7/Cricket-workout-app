@@ -97,6 +97,7 @@ class VideoScreen(Screen):
         self.video.load_url(self.current_video[self.video_num])
 
     def go_back(self, instance):
+        self.video.load_url('about:blank')
         self.video.hide()
         self._is_playing = False    
         self.manager.current = "day_select"
