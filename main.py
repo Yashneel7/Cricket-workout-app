@@ -148,7 +148,7 @@ class WorkoutApp(App):
     ],
 
     "tuesday": [
-        "https://video-host-v7l6.onrender.com/assets/tuesday/Tuesday1.mp4",
+        "https://video-host-v7l6.onrender.com/assets/tuesday/Tuesday.mp4",
         "https://video-host-v7l6.onrender.com/assets/tuesday/Tuesday2.mp4",
         "https://video-host-v7l6.onrender.com/assets/tuesday/Tuesday3.mp4",
         "https://video-host-v7l6.onrender.com/assets/tuesday/Tuesday4.mp4",
@@ -156,6 +156,7 @@ class WorkoutApp(App):
         "https://video-host-v7l6.onrender.com/assets/tuesday/Tuesday6.mp4",
         "https://video-host-v7l6.onrender.com/assets/tuesday/Tuesday7.mp4",
         "https://video-host-v7l6.onrender.com/assets/tuesday/Tuesday8.mp4",
+        "https://video-host-v7l6.onrender.com/assets/tuesday/Tuesday9.mp4"
     ],
 
     "thursday": [
