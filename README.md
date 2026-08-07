@@ -3,7 +3,7 @@
 A cross-platform mobile workout application designed specifically for cricket players.  
 Built with **Python + Kivy**, packaged for Android using **Buildozer**, and featuring a custom native **Android WebView** video player for smooth streaming of training videos.
 
-> Perfect for college students, interns, and junior developers looking to showcase real mobile development skills with Python.
+
 
 ---
 
