@@ -30,15 +30,7 @@ Built with **Python + Kivy**, packaged for Android using **Buildozer**, and feat
 
 ---
 
-## 📱 Screenshots
 
-*(Add screenshots here after building the APK)*
-
-| Day Selection | Video Player |
-|---------------|--------------|
-| ![Day Select](screenshots/day_select.png) | ![Video](screenshots/video_player.png) |
-
----
 
 ## 🚀 Getting Started
 
